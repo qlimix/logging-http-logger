@@ -2,7 +2,7 @@
 
 namespace Qlimix\Log\Logger\Request;
 
-use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Qlimix\Log\Handler\Channel;
 use Qlimix\Log\Handler\Level;
 use Qlimix\Log\Handler\LogHandlerInterface;
@@ -23,7 +23,7 @@ final class PSRRequestLogger implements RequestLoggerInterface
     /**
      * @inheritDoc
      */
-    public function log(RequestInterface $request): void
+    public function log(ServerRequestInterface $request): void
     {
         try {
             $context = [
@@ -32,10 +32,11 @@ final class PSRRequestLogger implements RequestLoggerInterface
                 'method' => $request->getMethod(),
                 'uri' => $request->getUri(),
                 'type' => 'request',
-                'target' => $request->getRequestTarget()
+                'target' => $request->getRequestTarget(),
+                'attributes' => $request->getAttributes(),
             ];
 
-            $message = 'Request : '.$request->getMethod(). ' '.$request->getUri();
+            $message = 'Request : '.$request->getMethod().' '.$request->getUri();
 
             $this->logHandler->log(new Channel('http'), Level::createInfo(), $message, $context);
         } catch (\Throwable $exception) {

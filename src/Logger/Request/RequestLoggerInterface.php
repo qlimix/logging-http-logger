@@ -2,12 +2,12 @@
 
 namespace Qlimix\Log\Logger\Request;
 
-use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 interface RequestLoggerInterface
 {
     /**
-     * @param RequestInterface $request
+     * @param ServerRequestInterface $request
      */
-    public function log(RequestInterface $request): void;
+    public function log(ServerRequestInterface $request): void;
 }
