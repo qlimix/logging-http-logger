@@ -6,15 +6,13 @@ use Psr\Http\Message\ServerRequestInterface;
 use Qlimix\Log\Handler\Channel;
 use Qlimix\Log\Handler\Level;
 use Qlimix\Log\Handler\LogHandlerInterface;
+use Throwable;
 
 final class PSRRequestLogger implements RequestLoggerInterface
 {
     /** @var LogHandlerInterface */
     private $logHandler;
 
-    /**
-     * @param LogHandlerInterface $logHandler
-     */
     public function __construct(LogHandlerInterface $logHandler)
     {
         $this->logHandler = $logHandler;
@@ -39,7 +37,7 @@ final class PSRRequestLogger implements RequestLoggerInterface
             $message = 'Request : '.$request->getMethod().' '.$request->getUri();
 
             $this->logHandler->log(new Channel('http'), Level::createInfo(), $message, $context);
-        } catch (\Throwable $exception) {
+        } catch (Throwable $exception) {
         }
     }
 }

@@ -6,8 +6,5 @@ use Psr\Http\Message\ResponseInterface;
 
 interface ResponseLoggerInterface
 {
-    /**
-     * @param ResponseInterface $response
-     */
     public function log(ResponseInterface $response): void;
 }

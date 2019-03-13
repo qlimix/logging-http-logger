@@ -6,8 +6,5 @@ use Psr\Http\Message\ServerRequestInterface;
 
 interface RequestLoggerInterface
 {
-    /**
-     * @param ServerRequestInterface $request
-     */
     public function log(ServerRequestInterface $request): void;
 }

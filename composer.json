@@ -13,12 +13,9 @@
             "Qlimix\\Log\\": "src/"
         }
     },
-    "require-dev": {
+    "require": {
         "qlimix/logging" : "dev-master",
         "psr/http-message": "^1.0"
-    },
-    "suggest": {
-        "psr/http-message": "Request/response logging"
     },
     "config": {
         "sort-packages": true
@@ -28,5 +25,7 @@
             "type": "vcs",
             "url":  "git@bitbucket.org:qlimix/logging.git"
         }
-    ]
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

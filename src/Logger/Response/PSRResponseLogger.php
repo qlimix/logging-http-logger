@@ -6,15 +6,13 @@ use Psr\Http\Message\ResponseInterface;
 use Qlimix\Log\Handler\Channel;
 use Qlimix\Log\Handler\Level;
 use Qlimix\Log\Handler\LogHandlerInterface;
+use Throwable;
 
 final class PSRResponseLogger implements ResponseLoggerInterface
 {
     /** @var LogHandlerInterface */
     private $logHandler;
 
-    /**
-     * @param LogHandlerInterface $logHandler
-     */
     public function __construct(LogHandlerInterface $logHandler)
     {
         $this->logHandler = $logHandler;
@@ -36,7 +34,7 @@ final class PSRResponseLogger implements ResponseLoggerInterface
             $message = 'Response : '.$response->getStatusCode();
 
             $this->logHandler->log(new Channel('http'), Level::createInfo(), $message, $context);
-        } catch (\Throwable $exception) {
+        } catch (Throwable $exception) {
         }
     }
 }
