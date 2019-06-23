@@ -1,31 +1,39 @@
 {
     "name": "qlimix/logging-http-logger",
-    "type": "package",
-    "license": "LGPL-3.0-only",
+    "type": "library",
+    "description": "Logging PSR-7 http requests",
+    "license": "MIT",
+    "keywords": [
+        "PSR-7",
+        "logging",
+        "request",
+        "response"
+    ],
     "authors": [
         {
             "name": "frank",
             "email": "frank@qlimix.net"
         }
     ],
+    "require": {
+        "php": ">=7.2",
+        "qlimix/logging" : "^1.0",
+        "psr/http-message": "^1.0"
+    },
     "autoload": {
         "psr-4": {
             "Qlimix\\Log\\": "src/"
         }
     },
-    "require": {
-        "qlimix/logging" : "dev-master",
-        "psr/http-message": "^1.0"
+    "autoload-dev": {
+        "psr-4": {
+            "Qlimix\\Tests\\Log\\": "tests/"
+        }
     },
     "config": {
         "sort-packages": true
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "git@bitbucket.org:qlimix/logging.git"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "require-dev": {
+        "qlimix/code-standard": "^1.0"
+    }
 }
