@@ -20,6 +20,7 @@ final class PSRRequestLogger implements RequestLoggerInterface
 
     /**
      * @inheritDoc
+     * @SuppressWarnings(PHPMD.EmptyCatchBlock)
      */
     public function log(ServerRequestInterface $request): void
     {

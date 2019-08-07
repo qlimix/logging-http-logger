@@ -20,6 +20,7 @@ final class PSRResponseLogger implements ResponseLoggerInterface
 
     /**
      * @inheritDoc
+     * @SuppressWarnings(PHPMD.EmptyCatchBlock)
      */
     public function log(ResponseInterface $response): void
     {
