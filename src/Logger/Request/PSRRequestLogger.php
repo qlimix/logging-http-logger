@@ -10,8 +10,7 @@ use Throwable;
 
 final class PSRRequestLogger implements RequestLoggerInterface
 {
-    /** @var LogHandlerInterface */
-    private $logHandler;
+    private LogHandlerInterface $logHandler;
 
     public function __construct(LogHandlerInterface $logHandler)
     {

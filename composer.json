@@ -16,8 +16,8 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
-        "qlimix/logging" : "^1.0",
+        "php": ">7.4",
+        "qlimix/logging" : "^3.0",
         "psr/http-message": "^1.0"
     },
     "autoload": {
@@ -34,6 +34,6 @@
         "sort-packages": true
     },
     "require-dev": {
-        "qlimix/code-standard": "^1.0"
+        "qlimix/code-standard": "^3.0"
     }
 }

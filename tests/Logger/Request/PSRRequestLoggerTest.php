@@ -12,14 +12,9 @@ use Qlimix\Log\Logger\Request\PSRRequestLogger;
 
 final class PSRRequestLoggerTest extends TestCase
 {
-    /** @var MockObject */
-    private $logger;
-
-    /** @var MockObject */
-    private $request;
-
-    /** @var PSRRequestLogger */
-    private $requestLogger;
+    private MockObject $logger;
+    private MockObject $request;
+    private PSRRequestLogger $requestLogger;
 
     protected function setUp(): void
     {
@@ -28,14 +23,10 @@ final class PSRRequestLoggerTest extends TestCase
         $this->requestLogger = new PSRRequestLogger($this->logger);
     }
 
-    /**
-     * @test
-     */
-    public function shouldLog(): void
+    public function testShouldLog(): void
     {
         $this->logger->expects($this->once())
             ->method('log');
-
 
         $stream = $this->createMock(StreamInterface::class);
 
@@ -62,19 +53,14 @@ final class PSRRequestLoggerTest extends TestCase
         $this->request->expects($this->once())
             ->method('getAttributes');
 
-
         $this->requestLogger->log($this->request);
     }
 
-    /**
-     * @test
-     */
-    public function shouldNotThrowOnLogException(): void
+    public function testShouldNotThrowOnLogException(): void
     {
         $this->logger->expects($this->once())
             ->method('log')
             ->willThrowException(new Exception());
-
 
         $stream = $this->createMock(StreamInterface::class);
 
