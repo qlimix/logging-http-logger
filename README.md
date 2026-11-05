@@ -1,5 +1,7 @@
 # Logging-http-logger
 
+> **Archived:** this package is no longer maintained.
+
 [![Travis CI](https://api.travis-ci.org/qlimix/logging-http-logger.svg?branch=master)](https://travis-ci.org/qlimix/logging-http-logger)
 [![Coveralls](https://img.shields.io/coveralls/github/qlimix/logging-http-logger.svg)](https://coveralls.io/github/qlimix/logging-http-logger)
 [![Packagist](https://img.shields.io/packagist/v/qlimix/logging-http-logger.svg)](https://packagist.org/packages/qlimix/logging-http-logger)
